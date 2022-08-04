@@ -24,12 +24,12 @@ const Home: NextPage<{ slug: string; gitRef: string }> = ({ slug, gitRef }) => {
   );
 };
 
+const GIT_REF = process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF;
+const SLUG = process.env.NEXT_PUBLIC_VERCEL_GIT_REPO_SLUG;
+
 export const getServerSideProps: GetServerSideProps = async function (
   ctx: GetServerSidePropsContext
 ) {
-  const GIT_REF = process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF;
-  const SLUG = process.env.NEXT_PUBLIC_VERCEL_GIT_REPO_SLUG;
-
   return {
     props: {
       gitRef: GIT_REF,
