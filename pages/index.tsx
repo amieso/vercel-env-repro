@@ -27,7 +27,7 @@ const Home: NextPage<{ slug: string; gitRef: string }> = ({ slug, gitRef }) => {
 export const getServerSideProps: GetServerSideProps = async function (
   ctx: GetServerSidePropsContext
 ) {
-  const GIT_REF = process.env.NEXT_PUBLIC_VERCEL_GIT_REPO_SLUG;
+  const GIT_REF = process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF;
   const SLUG = process.env.NEXT_PUBLIC_VERCEL_GIT_REPO_SLUG;
 
   return {
